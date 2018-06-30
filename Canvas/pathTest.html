@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PathTest</title>
+    <script>
+        function draw() {
+            var canvas = document.getElementById("drawing");
+            if(canvas.getContext) {
+                var context = canvas.getContext("2d");
+
+                //test lineTo()
+                context.beginPath();
+                context.moveTo(50,50);
+                context.lineTo(50,100);
+                context.lineTo(100,100);
+                context.closePath();
+                context.stroke();   //只有调用stroke()方法才能在canvas中显示shape。
+            }
+        }
+    </script>
+</head>
+<body onload="draw()">
+    <canvas id="drawing" width="200" height="150"></canvas>
+</body>
+</html>
